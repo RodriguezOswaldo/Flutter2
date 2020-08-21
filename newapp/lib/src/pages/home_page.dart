@@ -41,9 +41,7 @@ List<Widget> _itemLists(List<dynamic> data, BuildContext context) {
       leading: getIcon(opt['icon']),
       trailing: Icon(Icons.keyboard_arrow_right, color: Colors.blueAccent),
       onTap: () {
-        final route = MaterialPageRoute(builder: (context) {
-          return AlertPage();
-        });
+        final route = MaterialPageRoute(builder: (context) => AlertPage());
         Navigator.push(context, route);
       },
     );
