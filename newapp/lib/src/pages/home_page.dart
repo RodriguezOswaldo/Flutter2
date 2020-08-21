@@ -2,8 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:newapp/src/providers/menu_providers.dart';
 import 'package:newapp/src/utils/icono_string_util.dart';
 
-import 'alert_page.dart';
-
 class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -41,8 +39,10 @@ List<Widget> _itemLists(List<dynamic> data, BuildContext context) {
       leading: getIcon(opt['icon']),
       trailing: Icon(Icons.keyboard_arrow_right, color: Colors.blueAccent),
       onTap: () {
-        final route = MaterialPageRoute(builder: (context) => AlertPage());
-        Navigator.push(context, route);
+        Navigator.pushNamed(context, opt['ruta']);
+        //route to go to a new screen
+        // final route = MaterialPageRoute(builder: (context) => AlertPage());
+        // Navigator.push(context, route);
       },
     );
     opciones..add(widgetTemp)..add(Divider());
