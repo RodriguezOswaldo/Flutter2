@@ -22,6 +22,7 @@ class _AnimatedContainerPageState extends State<AnimatedContainerPage> {
           child: AnimatedContainer(
         width: _width,
         duration: Duration(seconds: 1),
+        curve: Curves.fastOutSlowIn,
         height: _height,
         decoration:
             BoxDecoration(borderRadius: _borderRadiusGeometry, color: _color),
