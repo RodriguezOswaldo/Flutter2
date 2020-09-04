@@ -19,8 +19,9 @@ class _AnimatedContainerPageState extends State<AnimatedContainerPage> {
         title: Text('Animated Container'),
       ),
       body: Center(
-          child: Container(
+          child: AnimatedContainer(
         width: _width,
+        duration: Duration(seconds: 1),
         height: _height,
         decoration:
             BoxDecoration(borderRadius: _borderRadiusGeometry, color: _color),
@@ -34,10 +35,12 @@ class _AnimatedContainerPageState extends State<AnimatedContainerPage> {
 
   void _changeShape() {
     final random = Random();
-    _width += random.nextInt(300).toDouble();
-    _height += 50.0;
-    _color = Colors.red;
-
     setState(() {});
+    _width += random.nextInt(100).toDouble();
+    _height += random.nextInt(100).toDouble();
+    _color = Color.fromRGBO(
+        random.nextInt(255), random.nextInt(255), random.nextInt(255), 1);
+    _borderRadiusGeometry =
+        BorderRadius.circular(random.nextInt(100).toDouble());
   }
 }
