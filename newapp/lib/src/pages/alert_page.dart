@@ -39,7 +39,7 @@ class AlertPage extends StatelessWidget {
             mainAxisSize: MainAxisSize.min,
             children: <Widget>[
               Text('Content Box'),
-              FlutterLogo(size: 100),
+              FlutterLogo(size: 150),
             ],
           ),
           actions: <Widget>[
