@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'dart:math';
 
 class AnimatedContainerPage extends StatefulWidget {
   @override
@@ -32,7 +33,8 @@ class _AnimatedContainerPageState extends State<AnimatedContainerPage> {
   }
 
   void _changeShape() {
-    _width += 50.0;
+    final random = Random();
+    _width += random.nextInt(300).toDouble();
     _height += 50.0;
     _color = Colors.red;
 
