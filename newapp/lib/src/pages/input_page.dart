@@ -88,6 +88,7 @@ class _InputPageState extends State<InputPage> {
 
   Widget _createDate(BuildContext context) {
     return TextField(
+      // obscureText: true,
       controller: _inputFieldDateController,
       enableInteractiveSelection: false,
       decoration: InputDecoration(
@@ -104,7 +105,6 @@ class _InputPageState extends State<InputPage> {
     );
   }
 
-//Testing
   _selectDate(BuildContext context) async {
     DateTime picked = await showDatePicker(
       context: context,
