@@ -21,6 +21,8 @@ class _InputPageState extends State<InputPage> {
           Divider(),
           _createEmail(),
           Divider(),
+          _createPassword(),
+          Divider(),
           _createPerson(),
         ],
       ),
@@ -46,6 +48,21 @@ class _InputPageState extends State<InputPage> {
         });
       },
     );
+  }
+
+  Widget _createPassword() {
+    return TextField(
+        obscureText: true,
+        decoration: InputDecoration(
+          border: OutlineInputBorder(borderRadius: BorderRadius.circular(20.0)),
+          hintText: 'Password',
+          labelText: 'Password: ',
+          suffixIcon: Icon(Icons.lock),
+          icon: Icon(Icons.lock_open),
+        ),
+        onChanged: (valor) => setState(() {
+              _email = valor;
+            }));
   }
 
   Widget _createEmail() {
