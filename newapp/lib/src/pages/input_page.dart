@@ -88,7 +88,6 @@ class _InputPageState extends State<InputPage> {
 
   Widget _createDate(BuildContext context) {
     return TextField(
-      // obscureText: true,
       controller: _inputFieldDateController,
       enableInteractiveSelection: false,
       decoration: InputDecoration(
