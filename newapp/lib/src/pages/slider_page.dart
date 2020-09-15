@@ -14,8 +14,12 @@ class _SliderPageState extends State<SliderPage> {
         title: Text('Slider'),
       ),
       body: Container(
+        padding: EdgeInsets.only(top: 20.0),
         child: Column(
-          children: <Widget>[_createSlider()],
+          children: <Widget>[
+            _createSlider(),
+            _createImage(),
+          ],
         ),
       ),
     );
@@ -23,12 +27,26 @@ class _SliderPageState extends State<SliderPage> {
 
   Widget _createSlider() {
     return Slider(
+      activeColor: Colors.indigoAccent,
+      label: 'Tamaño de la Imagen',
+      divisions: 20,
       value: _sliderValue,
       min: 10.0,
       max: 400.0,
       onChanged: (value) {
-        _sliderValue = value;
+        setState(() {
+          _sliderValue = value;
+        });
       },
+    );
+  }
+
+  Widget _createImage() {
+    return Image(
+      image: NetworkImage(
+          'https://www.syfy.com/sites/syfy/files/styles/1200x680_hero/public/2020/07/batman-death-in-the-family.jpg'),
+      width: _sliderValue,
+      fit: BoxFit.contain,
     );
   }
 }
