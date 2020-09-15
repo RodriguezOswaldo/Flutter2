@@ -18,7 +18,7 @@ class _SliderPageState extends State<SliderPage> {
         child: Column(
           children: <Widget>[
             _createSlider(),
-            _createImage(),
+            Expanded(child: _createImage()),
           ],
         ),
       ),
@@ -29,7 +29,7 @@ class _SliderPageState extends State<SliderPage> {
     return Slider(
       activeColor: Colors.indigoAccent,
       label: 'Tamaño de la Imagen',
-      divisions: 20,
+      // divisions: 20,
       value: _sliderValue,
       min: 10.0,
       max: 400.0,
