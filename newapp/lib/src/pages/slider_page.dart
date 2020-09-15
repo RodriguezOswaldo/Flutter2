@@ -13,8 +13,21 @@ class _SliderPageState extends State<SliderPage> {
         title: Text('Slider'),
       ),
       body: Container(
-        child: Text('Slider Page'),
+        child: Column(
+          children: <Widget>[_createSlider()],
+        ),
       ),
+    );
+  }
+
+  Widget _createSlider() {
+    return Slider(
+      value: 100.0,
+      min: 10.0,
+      max: 400.0,
+      onChanged: (value) {
+        print(value);
+      },
     );
   }
 }
