@@ -45,6 +45,8 @@ class _SliderPageState extends State<SliderPage> {
     return Image(
       image: NetworkImage(
           'https://www.syfy.com/sites/syfy/files/styles/1200x680_hero/public/2020/07/batman-death-in-the-family.jpg'),
+      // placeholder: AssetImage('assets/jar-loading.gif'),
+
       width: _sliderValue,
       fit: BoxFit.contain,
     );
