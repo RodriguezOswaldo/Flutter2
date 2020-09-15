@@ -6,7 +6,7 @@ class SliderPage extends StatefulWidget {
 }
 
 class _SliderPageState extends State<SliderPage> {
-  @override
+  // @override
   double _sliderValue = 100.0;
   Widget build(BuildContext context) {
     return Scaffold(
