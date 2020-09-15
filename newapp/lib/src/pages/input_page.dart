@@ -138,19 +138,31 @@ class _InputPageState extends State<InputPage> {
   }
 
   Widget _createDropdown() {
-    return DropdownButton(
-      items: getOptionsDropdown(),
-      onChanged: (opt) {
-        setState(() {
-          _opcionSelecctionada = opt;
-        });
-      },
+    return Row(
+      children: <Widget>[
+        Icon(Icons.select_all),
+        SizedBox(
+          width: 20.0,
+        ),
+        Expanded(
+          child: DropdownButton(
+            value: _opcionSelecctionada,
+            items: getOptionsDropdown(),
+            onChanged: (opt) {
+              setState(() {
+                _opcionSelecctionada = opt;
+              });
+            },
+          ),
+        )
+      ],
     );
   }
 
   Widget _createPerson() {
     return ListTile(
       title: Text('Name is: $_theName'),
+      leading: Text(_opcionSelecctionada),
       subtitle: Text('Email Addres : $_email'),
     );
   }
