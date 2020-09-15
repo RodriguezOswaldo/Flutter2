@@ -7,6 +7,7 @@ class SliderPage extends StatefulWidget {
 
 class _SliderPageState extends State<SliderPage> {
   @override
+  double _sliderValue = 100.0;
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
@@ -22,11 +23,11 @@ class _SliderPageState extends State<SliderPage> {
 
   Widget _createSlider() {
     return Slider(
-      value: 100.0,
+      value: _sliderValue,
       min: 10.0,
       max: 400.0,
       onChanged: (value) {
-        print(value);
+        _sliderValue = value;
       },
     );
   }
