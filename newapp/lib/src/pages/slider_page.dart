@@ -66,7 +66,7 @@ class _SliderPageState extends State<SliderPage> {
 
   Widget _createSwitch() {
     return SwitchListTile(
-      title: Text('Block Slider'),
+      title: Text('Switch Slider'),
       value: _checkBlock,
       onChanged: (valor) {
         setState(
