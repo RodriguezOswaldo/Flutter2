@@ -18,6 +18,7 @@ class _InputPageState extends State<InputPage> {
     return Scaffold(
       appBar: AppBar(
         title: Text('Inputs de Texto'),
+        backgroundColor: Color.fromARGB(23, 23, 112, 1),
       ),
       body: ListView(
         padding: EdgeInsets.symmetric(horizontal: 10.0, vertical: 20.0),
@@ -158,6 +159,7 @@ class _InputPageState extends State<InputPage> {
       ],
     );
   }
+
 //Create Person
   Widget _createPerson() {
     return ListTile(
