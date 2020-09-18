@@ -11,6 +11,7 @@ class _ListPageState extends State<ListPage> {
     return Scaffold(
       appBar: AppBar(
         title: Text('List Views'),
+        backgroundColor: Color.fromRGBO(433, 130, 12, 0.9),
       ),
       body: Text('Listas....'),
     );

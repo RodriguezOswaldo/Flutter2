@@ -13,6 +13,7 @@ class _SliderPageState extends State<SliderPage> {
     return Scaffold(
       appBar: AppBar(
         title: Text('Slider'),
+        backgroundColor: Color.fromRGBO(223, 1, 363, 0.3),
       ),
       body: Container(
         padding: EdgeInsets.only(top: 20.0),

@@ -6,6 +6,7 @@ class CardPage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text('Cards'),
+        backgroundColor: Color.fromRGBO(213, 13, 3, 0.3),
       ),
       body: ListView(
         padding: EdgeInsets.all(10.0),
