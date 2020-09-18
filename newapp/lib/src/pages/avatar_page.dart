@@ -6,6 +6,7 @@ class AvatarPage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text('Avatar Page'),
+        backgroundColor: Color.fromRGBO(253, 213, 23, 0.3),
         actions: <Widget>[
           Container(
             padding: EdgeInsets.all(5.0),

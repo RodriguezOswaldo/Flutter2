@@ -6,6 +6,7 @@ class AlertPage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text('Alert Page'),
+        backgroundColor: Color.fromRGBO(53, 213, 23, 0.3),
       ),
       body: Center(
         child: RaisedButton(

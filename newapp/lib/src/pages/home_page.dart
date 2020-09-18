@@ -8,6 +8,7 @@ class HomePage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text('Components'),
+        backgroundColor: Color.fromRGBO(123, 23, 23, 0.3),
       ),
       body: _lista(),
     );
