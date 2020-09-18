@@ -41,8 +41,7 @@ class _ListPageState extends State<ListPage> {
       itemBuilder: (BuildContext context, int index) {
         final image = _numberList = [index];
         return FadeInImage(
-          image:
-              NetworkImage('https://source.unsplash.com/random/500x30$image'),
+          image: NetworkImage('https://source.unsplash.com/random/500x3$image'),
           placeholder: AssetImage('assets/jar-loading.gif'),
         );
       },
