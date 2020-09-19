@@ -56,7 +56,7 @@ class _ListPageState extends State<ListPage> {
       itemBuilder: (BuildContext context, int index) {
         final image = _numberList = [index];
         return FadeInImage(
-          image: NetworkImage('https://source.unsplash.com/random/500x3$image'),
+          image: NetworkImage('https://source.unsplash.com/random/400x3$image'),
           placeholder: AssetImage('assets/jar-loading.gif'),
         );
       },
@@ -80,6 +80,13 @@ class _ListPageState extends State<ListPage> {
 
   void responseHTTP() {
     _isLoading = false;
+    _scrollController.animateTo(
+      _scrollController.position.pixels + 100,
+      curve: Curves.fastOutSlowIn,
+      duration: Duration(
+        milliseconds: 250,
+      ),
+    );
     _add10();
   }
 
@@ -92,6 +99,9 @@ class _ListPageState extends State<ListPage> {
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[CircularProgressIndicator()],
+          ),
+          SizedBox(
+            height: 15.0,
           )
         ],
       );
