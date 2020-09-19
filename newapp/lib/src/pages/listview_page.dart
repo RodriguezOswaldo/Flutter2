@@ -29,14 +29,24 @@ class _ListPageState extends State<ListPage> {
   }
 
   @override
+  void dispose() {
+    super.dispose();
+    _scrollController.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text('List Views'),
-        backgroundColor: Color.fromRGBO(433, 130, 12, 0.9),
-      ),
-      body: _createList(),
-    );
+        appBar: AppBar(
+          title: Text('List Views'),
+          backgroundColor: Color.fromRGBO(433, 130, 12, 0.9),
+        ),
+        body: Stack(
+          children: <Widget>[
+            _createList(),
+            _createLoading(),
+          ],
+        ));
   }
 
   Widget _createList() {
@@ -54,7 +64,7 @@ class _ListPageState extends State<ListPage> {
   }
 
   void _add10() {
-    for (var i = 1; i < 100; i++) {
+    for (var i = 1; i < 10; i++) {
       _lastItem++;
       _numberList.add(_lastItem);
     }
@@ -71,5 +81,22 @@ class _ListPageState extends State<ListPage> {
   void responseHTTP() {
     _isLoading = false;
     _add10();
+  }
+
+  Widget _createLoading() {
+    if (_isLoading) {
+      return Column(
+        mainAxisSize: MainAxisSize.max,
+        mainAxisAlignment: MainAxisAlignment.end,
+        children: <Widget>[
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[CircularProgressIndicator()],
+          )
+        ],
+      );
+    } else {
+      return Container();
+    }
   }
 }
