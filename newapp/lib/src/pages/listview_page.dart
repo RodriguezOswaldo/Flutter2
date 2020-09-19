@@ -78,7 +78,7 @@ class _ListPageState extends State<ListPage> {
   }
 
   void _add10() {
-    for (var i = 1; i < 10; i++) {
+    for (var i = 1; i < 25; i++) {
       _lastItem++;
       _numberList.add(_lastItem);
     }
