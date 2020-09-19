@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 
 class ListPage extends StatefulWidget {
@@ -10,17 +12,20 @@ class _ListPageState extends State<ListPage> {
 
   List<int> _numberList = new List();
   int _lastItem = 0;
+  bool _isLoading = false;
+  @override
   void initState() {
     super.initState();
     _add10();
-    _scrollController.addListener(
-      () {
-        if (_scrollController.position.pixels ==
-            _scrollController.position.maxScrollExtent) {
-          _add10();
-        }
-      },
-    );
+    _scrollController.addListener(() {
+      if (_scrollController.position.pixels ==
+          _scrollController.position.maxScrollExtent) {
+        // _add10();
+        // _add10();
+        fetchData();
+        print('scroller!');
+      }
+    });
   }
 
   @override
@@ -49,10 +54,22 @@ class _ListPageState extends State<ListPage> {
   }
 
   void _add10() {
-    for (var i = 1; i < 10; i++) {
+    for (var i = 1; i < 100; i++) {
       _lastItem++;
       _numberList.add(_lastItem);
     }
     setState(() {});
+  }
+
+  Future<Null> fetchData() async {
+    _isLoading = true;
+    setState(() {});
+    final duration = new Duration(seconds: 2);
+    return new Timer(duration, responseHTTP);
+  }
+
+  void responseHTTP() {
+    _isLoading = false;
+    _add10();
   }
 }
