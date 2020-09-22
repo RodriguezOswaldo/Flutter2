@@ -26,14 +26,21 @@ class HomePage extends StatelessWidget {
   }
 
   Widget _swiperCard() {
-    return Swiper(
-      itemBuilder: (BuildContext context, int Index) {
-        return new Image.network("http://via.placeholder.com/350x150",
-            fit: BoxFit.fill);
-      },
-      itemCount: 3,
-      pagination: new SwiperPagination(),
-      control: new SwiperControl(),
+    return Container(
+      padding: EdgeInsets.only(top: 10.0),
+      width: double.infinity,
+      height: 300.0,
+      child: Swiper(
+        layout: SwiperLayout.STACK,
+        itemBuilder: (BuildContext context, int Index) {
+          return new Image.network("http://via.placeholder.com/350x150",
+              fit: BoxFit.fill);
+        },
+        itemCount: 10,
+        itemWidth: 200.0,
+        // pagination: new SwiperPagination(),
+        // control: new SwiperControl(),
+      ),
     );
   }
 }
