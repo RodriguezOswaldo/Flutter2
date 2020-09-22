@@ -32,4 +32,20 @@ class Movie {
     this.overview,
     this.releaseDate,
   });
+
+  Movie.fromJsonMap(Map<String, dynamic> json) {
+    popularity = json['popularity'];
+    voteCount = json['vote_count'];
+    video = json['video'];
+    posterPath = json['poster_path'];
+    id = json['id'];
+    adult = json['adult'];
+    backdropPath = json['backdrop_path'];
+    originalTitle = json['original_title'];
+    genreIds = json['genre_ids'];
+    title = json['title'];
+    voteAverage = json['vote_average'];
+    overview = json['overview'];
+    releaseDate = json['release_date'];
+  }
 }
