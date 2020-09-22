@@ -9,10 +9,12 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+        backgroundColor: Color.fromRGBO(423, 111, 100, 20),
         appBar: AppBar(
           centerTitle: false,
-          title: Text('Movies in Teathre '),
-          backgroundColor: Colors.redAccent,
+          title: Text('Movies in Theatre '),
+          backgroundColor: Colors.green[800],
+          // color: Colors.accents,
           actions: <Widget>[
             IconButton(
               icon: Icon(Icons.search),
