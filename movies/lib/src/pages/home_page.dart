@@ -4,7 +4,8 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Text('Hola Mundo!!!!!!'),
-    );
+        body: SafeArea(
+      child: Text('Hola Mundo!!!!!!'),
+    ));
   }
 }
