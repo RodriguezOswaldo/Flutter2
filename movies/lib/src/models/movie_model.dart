@@ -60,4 +60,11 @@ class Movie {
     overview = json['overview'];
     releaseDate = json['release_date'];
   }
+  getPosterImg() {
+    if (posterPath == null) {
+      return 'https://previews.123rf.com/images/pavelstasevich/pavelstasevich1811/pavelstasevich181101065/112815953-no-image-available-icon-flat-vector.jpg';
+    } else {
+      return 'https://image.tmdb.org/t/p/w500/$posterPath';
+    }
+  }
 }
