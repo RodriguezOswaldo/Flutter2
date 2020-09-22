@@ -22,7 +22,7 @@ class CardSwiper extends StatelessWidget {
                 fit: BoxFit.cover),
           );
         },
-        itemCount: 10,
+        itemCount: movies.length,
         // itemWidth: 200.0,
         // pagination: new SwiperPagination(),
         // control: new SwiperControl(),
